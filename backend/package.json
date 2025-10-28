@@ -4,7 +4,7 @@
   "description": "Backend API for AIO Analyzer Tool",
   "main": "src/index.js",
   "engines": {
-    "node": ">=25.0.0"
+    "node": "22.x"
   },
   "scripts": {
     "start": "node src/index.js",

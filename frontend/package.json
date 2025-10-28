@@ -5,7 +5,7 @@
   "type": "module",
   "description": "SEO Analyzer Frontend - Vue 3 + Vite + Tailwind CSS",
   "engines": {
-    "node": ">=25.0.0"
+    "node": "22.x"
   },
   "scripts": {
     "dev": "vite",

@@ -1,5 +1,5 @@
 # Dockerfile for SEO Analyzer Backend
-FROM node:25-slim
+FROM node:22-slim
 
 # Install Chromium dependencies for Puppeteer
 RUN apt-get update && apt-get install -y \
