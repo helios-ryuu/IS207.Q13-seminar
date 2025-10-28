@@ -17,14 +17,14 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
+# Copy package files from backend directory
+COPY backend/package*.json ./
 
 # Install dependencies
 RUN npm install --omit=dev && npm cache clean --force
 
-# Copy source code
-COPY . .
+# Copy source code from backend directory
+COPY backend/ .
 
 # Set Puppeteer to use system Chromium
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
