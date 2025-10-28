@@ -1,647 +1,489 @@
-# SEO Analyzer - Full Stack Application# AIO Analyzer Tool
+<p align="center">
+  <a href="https://www.uit.edu.vn/" title="Trường Đại học Công nghệ Thông tin">
+    <img src="https://i.imgur.com/WmMnSRt.png" alt="Trường Đại học Công nghệ Thông tin | University of Information Technology">
+  </a>
+</p>
+<h1 align="center"><b>IS207 - PHÁT TRIỂN ỨNG DỤNG WEB</b></h1>
 
+## BẢNG MỤC LỤC
+* [Giới thiệu môn học](#giới-thiệu-môn-học)
+* [Giới thiệu đồ án seminar](#giới-thiệu-đồ-án-seminar)
+* [Seminar](#seminar)
+* [Thành viên nhóm](#thành-viên-nhóm)
+* [Tính năng chính](#tính-năng-chính)
+* [Công nghệ sử dụng](#công-nghệ-sử-dụng)
+* [Cấu trúc dự án](#cấu-trúc-dự-án)
+* [Kiến trúc hệ thống](#kiến-trúc-hệ-thống)
+* [Cài đặt phần mềm](#cài-đặt-phần-mềm)
+* [Khởi chạy dự án](#khởi-chạy-dự-án)
+* [Deployment](#deployment)
+* [Security](#security)
 
+## GIỚI THIỆU MÔN HỌC
+* **Tên môn học**: Phát triển ứng dụng web - Web Application Development
+* **Mã môn học**: IS207
+* **Lớp học**: IS207.Q13
+* **Năm học**: HK1 2025-2026
+* **Giảng viên hướng dẫn:** ThS. **Tạ Việt Phương**
+* **Email:** *phuongtv@uit.edu.vn*
 
-Ứng dụng phân tích SEO và AI Search optimization được xây dựng với Vue 3 (Frontend) và Express.js + Puppeteer (Backend).AI Search Optimization Checker - Công cụ phân tích SEO và tối ưu cho AI Search.
+---
 
+## GIỚI THIỆU ĐỒ ÁN SEMINAR
+* **Tên đồ án:** MelTech AIO Analyzer Tool - AI Search Optimization Checker
+* **Mô tả:** Ứng dụng full-stack phân tích tự động các yếu tố SEO quan trọng của website, giúp tối ưu hóa cho cả công cụ tìm kiếm truyền thống và AI Search Engine mới.
+* **Production URLs:**
+  - 🌐 Frontend: https://seo.helios.id.vn
+  - 🔌 Backend API: https://api.helios.id.vn
 
+---
 
-## 📋 Tổng quan## 🚀 Tech Stack
+## SEMINAR
+**Chủ đề:** SEO trang web trong thời đại ngày nay khi có AI Search. Cần làm gì để cải thiện quảng bá, tăng tiếp cận trang web cả trên AI Search và SEO. Trình bày một số cách thực hiện, phương pháp bao gồm kỹ thuật và nội dung.
 
+**Links:**
+- 📦 Repository: https://github.com/helios-ryuu/IS207.Q13-seminar
+- 🚀 Live Demo: https://seo.helios.id.vn
+- 📖 Documentation: [DEPLOYMENT.md](./DEPLOYMENT.md)
 
+---
 
-SEO Analyzer là công cụ phân tích website tự động, giúp đánh giá các yếu tố SEO quan trọng:### Frontend
+## THÀNH VIÊN NHÓM
+| STT |   MSSV   |           Họ và Tên |                                                      Github |                  Email |
+|-----|:--------:|--------------------:|------------------------------------------------------------:|-----------------------:|
+| 1   | 23520641 | Nguyễn Văn Mạnh Huy |                         [HuynFZ](https://github.com/HuynFZ) | 23520641@gm.uit.edu.vn |
+| 2   | 23521434 |         Ngô Tiến Sỹ |               [helios-ryuu](https://github.com/helios-ryuu) | 23521367@gm.uit.edu.vn |
+| 3   | 23521030 |  Nguyễn Lê Bảo Ngọc |               [ngochoccode](https://github.com/ngochoccode) | 23521030@gm.uit.edu.vn |
+| 4   | 23520698 |  Nguyễn Thành Khang | [Nguyen-Thanh-Khang](https://github.com/Nguyen-Thanh-Khang) | 23520698@gm.uit.edu.vn |
+| 5   | 23521417 |        Lê Vĩnh Thái |     [VinhThaideptraia](https://github.com/VinhThaideptraia) | 23521417@gm.uit.edu.vn |
+| 6   | 23520753 |      Phạm Nhật Khoa |                     [Khoa0216](https://github.com/Khoa0216) | 23520753@gm.uit.edu.vn |
+| 7   | 23520982 |      Nguyễn Văn Nam |               [Sinister-VN](https://github.com/Sinister-VN) | 23520982@gm.uit.edu.vn |
 
-- **Vue 3** - Composition API với `<script setup>`
+---
 
-- ✅ JSON-LD Structured Data- **Vite 7** - Build tool & dev server
+## TÍNH NĂNG CHÍNH
 
-- ✅ Author Information- **Tailwind CSS v4** - Styling
+### 🎯 Phân Tích SEO Toàn Diện
 
-- ✅ Meta Description (độ dài tối ưu)
+1. **✅ JSON-LD Structured Data**
+   - Kiểm tra schema markup
+   - Validate author information
+   - Check publication date
 
-- ✅ Headings Structure (H1, H2, H3)### Backend
+2. **✅ Meta Description Analysis**
+   - Đánh giá độ dài (50-160 ký tự)
+   - Character count
+   - Optimization suggestions
 
-- ✅ Open Graph Tags- **Express.js 5** - Web framework
+3. **✅ Headings Structure**
+   - Phân tích H1, H2, H3 hierarchy
+   - Count số lượng mỗi loại heading
+   - Validate structure
 
-- ✅ Canonical URL- **Puppeteer 24** - Headless browser crawler
+4. **✅ Open Graph Tags**
+   - Validate OG meta tags
+   - Check social media preview
+   - Image, title, description validation
 
-- **Cheerio** - HTML parser
+5. **✅ Canonical URL**
+   - Kiểm tra canonical tag
+   - Prevent duplicate content issues
 
-**Điểm số:** 0-100% dựa trên weighted scoring algorithm.- **Node.js** - Runtime environment
+6. **✅ SEO Score**
+   - Tính điểm tổng thể 0-100%
+   - Weighted scoring algorithm
+   - Performance metrics
 
+### 🚀 Công Nghệ & Performance
 
+- **Real-time Analysis:** Kết quả trong 10-30 giây
+- **Headless Browser:** Puppeteer crawl JavaScript-rendered content
+- **Responsive UI:** Tối ưu cho desktop, tablet, mobile
+- **Modern Stack:** Vue 3 + Express 5 + Node.js 22
 
-## 🏗️ Kiến trúc hệ thống## 📁 Cấu Trúc Project
+---
 
-
-
-``````
-
-┌─────────────────┐         HTTP          ┌─────────────────┐IS207.Q13-seminar/
-
-│                 │ ◄──────────────────► │                 │├── backend/              # Backend API
-
-│  Vue 3 Frontend │    POST /api/analyze  │  Express Backend││   ├── src/
-
-│  (Port 5173)    │                       │  (Port 3000)    ││   │   ├── index.js              # Server entry
-
-│                 │                       │                 ││   │   ├── routes/               # API routes
-
-└─────────────────┘                       └────────┬────────┘│   │   ├── controllers/          # Request handlers
-
-                                                   ││   │   ├── services/             # Business logic
-
-                                                   ▼│   │   └── utils/                # Helpers
-
-                                          ┌────────────────┐│   └── package.json
-
-                                          │   Puppeteer    ││
-
-                                          │  (Headless     │├── src/                  # Frontend source
-
-                                          │   Chromium)    ││   ├── components/
-
-                                          └────────┬───────┘│   │   ├── features/             # Feature components
-
-                                                   ││   │   ├── layout/               # Layout components
-
-                                                   ▼│   │   └── ui/                   # UI primitives
-
-                                          ┌────────────────┐│   ├── services/                 # API services
-
-                                          │    Cheerio     ││   └── main.js
-
-                                          │  (HTML Parser) ││
-
-                                          └────────────────┘├── public/               # Static assets
-
-```└── package.json          # Frontend dependencies
-
-```
-
-## 🚀 Công nghệ sử dụng
-
-## 🛠️ Cài Đặt & Chạy
+## CÔNG NGHỆ SỬ DỤNG
 
 ### Frontend
 
-- **Vue 3.5.22** - Composition API, Script Setup### Yêu Cầu
-
-- **Vite 7.1.11** - Build tool- Node.js >= 18.x
-
-- **Tailwind CSS 4.1.16** - Styling- npm >= 9.x
-
-- **Axios 1.13.1** - HTTP client
-
-- **Reka UI 2.6.0** - Headless components### Quick Start
-
-
-
-### Backend**1. Clone repository**
-
-- **Express.js 5.1.0** - Web framework```bash
-
-- **Puppeteer 24.26.1** - Browser automationgit clone <repository-url>
-
-- **Cheerio 1.1.2** - HTML parsingcd IS207.Q13-seminar
-
-- **CORS 2.8.5** - Cross-origin support```
-
-- **dotenv 17.2.3** - Environment config
-
-**2. Cài đặt Frontend**
-
-## 📁 Cấu trúc dự án```bash
-
-npm install
-
-``````
-
-IS207.Q13-seminar/
-
-├── frontend/                    # Vue 3 frontend application**3. Cài đặt Backend**
-
-│   ├── src/```bash
-
-│   │   ├── components/cd backend
-
-│   │   │   ├── layout/         # AppNavbar, AppHero, AppFooternpm install
-
-│   │   │   ├── features/       # AnalyzerForm, ResultChecklistcd ..
-
-│   │   │   └── ui/             # BaseSpinner, BaseAlert, ScoreCircle```
-
-│   │   ├── services/           # API services (analyzerService.js)
-
-│   │   ├── composables/        # Vue composables**4. Chạy Project**
-
-│   │   ├── constants/          # Constants
-
-│   │   ├── App.vueMở 2 terminal:
-
-│   │   └── main.js
-
-│   ├── public/                 # Static assets**Terminal 1 - Backend:**
-
-│   ├── index.html```bash
-
-│   ├── vite.config.jscd backend
-
-│   ├── tailwind.config.jsnpm run dev
-
-│   ├── package.json```
-
-│   └── README.md               # Frontend documentationBackend chạy tại: http://localhost:3000
-
-│
-
-├── backend/                     # Express backend API**Terminal 2 - Frontend:**
-
-│   ├── src/```bash
-
-│   │   ├── index.js            # Server entry pointnpm run dev
-
-│   │   ├── routes/             # API routes```
-
-│   │   ├── controllers/        # Request handlersFrontend chạy tại: http://localhost:5173
-
-│   │   ├── services/           # Business logic + Puppeteer
-
-│   │   └── utils/              # Parsers, validators, scoring## 📖 Tài Liệu
-
-│   ├── .env
-
-│   ├── package.json- [API Specification](./API-SPECIFICATION.md) - Chi tiết API endpoints
-
-│   └── README.md               # Backend documentation- [Setup Guide](./SETUP-GUIDE.md) - Hướng dẫn cài đặt chi tiết
-
-│- [Code Conventions](./CONVENTIONS.md) - Naming conventions
-
-├── .gitignore- [Project Structure](./STRUCTURE.md) - Chi tiết components
-
-└── README.md                    # This file
-
-```## ✨ Features
-
-
-
-## 🛠️ Cài đặt và Chạy dự án- ✅ Phân tích JSON-LD structured data
-
-- ✅ Kiểm tra meta description
-
-### Yêu cầu hệ thống- ✅ Đếm headings (H1, H2, H3)
-
-- ✅ Validate Open Graph tags
-
-- **Node.js** >= 20.19.0 hoặc >= 22.12.0- ✅ Check canonical URL
-
-- **npm** hoặc yarn- ✅ Tính điểm tổng thể (0-100)
-
-- **~200MB** disk space (cho Chromium)- ✅ Real-time analysis với Puppeteer
-
-- ✅ Responsive UI
-
-### 1. Clone repository
-
-## 🔧 Scripts
-
-```bash
-
-git clone <repository-url>### Frontend
-
-cd IS207.Q13-seminar```bash
-
-```npm run dev      # Development server
-
-npm run build    # Production build
-
-### 2. Cài đặt Backendnpm run preview  # Preview production build
-
-```
-
-```bash
-
-cd backend### Backend
-
-npm install```bash
-
-```cd backend
-
-npm run dev      # Development với nodemon
-
-Puppeteer sẽ tự động download Chromium (~170MB).npm start        # Production
-
-```
-
-**Cấu hình `.env`:**
-
-## 🌐 API Usage
-
-```properties
-
-PORT=3000**Endpoint:** `POST http://localhost:3000/api/analyze`
-
-NODE_ENV=development
-
-CORS_ORIGIN=http://localhost:5173**Request:**
-
-PUPPETEER_TIMEOUT=30000```json
-
-PUPPETEER_HEADLESS=true{
-
-```  "url": "https://example.com/article"
-
-}
-
-### 3. Cài đặt Frontend```
-
-
-
-```bash**Response:**
-
-cd ../frontend```json
-
-npm install{
-
-```  "success": true,
-
-  "data": {
-
-**Cấu hình `.env`:**    "url": "https://example.com/article",
-
-    "score": 85,
-
-```properties    "checks": {
-
-VITE_API_BASE_URL=http://localhost:3000/api      "hasJsonLd": true,
-
-NODE_ENV=development      "hasAuthor": true,
-
-VITE_ENABLE_DEVTOOLS=false      "hasMetaDescription": true,
-
-```      "metaDescriptionLength": 155,
-
-      "h2Count": 5,
-
-### 4. Chạy ứng dụng      "hasOgTags": true,
-
-      "hasCanonical": true
-
-**Terminal 1 - Backend:**    }
-
-  }
-
-```bash}
-
-cd backend```
-
-npm run dev
-
-```## 🎨 UI Components
-
-
-
-Backend sẽ chạy tại: http://localhost:3000- `BaseSpinner` - Loading spinner
-
-- `BaseAlert` - Alert messages
-
-**Terminal 2 - Frontend:**- `ScoreCircle` - Circular progress
-
-- `ChecklistItem` - Checklist items
-
-```bash- `AnalyzerForm` - URL input form
-
-cd frontend- `ResultChecklist` - Results display
-
-npm run dev
-
-```## 🔐 Environment Variables
-
-
-
-Frontend sẽ chạy tại: http://localhost:5173### Frontend (`.env`)
-
-```env
-
-### 5. Truy cập ứng dụngVITE_API_BASE_URL=http://localhost:3000/api
-
-NODE_ENV=development
-
-Mở trình duyệt: **http://localhost:5173**VITE_ENABLE_DEVTOOLS=false
-
-```
-
-## 🧪 Testing
-
-### Backend (`backend/.env`)
-
-### Test Backend API```env
-
-PORT=3000
-
-**PowerShell:**NODE_ENV=development
-
-CORS_ORIGIN=http://localhost:5173
-
-```powershellPUPPETEER_TIMEOUT=30000
-
-$body = @{ url = "https://vnexpress.net" } | ConvertTo-JsonPUPPETEER_HEADLESS=true
-
-Invoke-RestMethod -Uri "http://localhost:3000/api/analyze" ````
-
-    -Method Post -Body $body -ContentType "application/json"
-
-```## 📝 Development Notes
-
-
-
-**curl:**- Backend sử dụng Puppeteer - lần đầu chạy sẽ tải Chromium (~170MB)
-
-- Timeout mặc định: 60 giây cho mỗi analysis
-
-```bash- CORS đã được config cho development
-
-curl -X POST http://localhost:3000/api/analyze \- Vue DevTools đã tắt (có thể bật lại trong vite.config.js)
-
-  -H "Content-Type: application/json" \
-
-  -d '{"url":"https://vnexpress.net"}'## 🐛 Troubleshooting
-
-```
-
-### Port đã được sử dụng
-
-### Test URLs```bash
-
-# Thay đổi port trong .env hoặc backend/.env
-
-- **VNExpress:** https://vnexpress.net```
-
-- **Dân Trí:** https://dantri.com.vn
-
-- **Medium:** https://medium.com### Puppeteer không chạy
-
-- **Dev.to:** https://dev.to```bash
-
-cd backend
-
-## 📡 API Documentationnpm install puppeteer --force
-
-```
-
-### POST /api/analyze
-
-### Frontend không kết nối Backend
-
-**Request:**- Kiểm tra backend đang chạy
-
-- Kiểm tra VITE_API_BASE_URL trong .env
-
-```json- Restart dev server sau khi sửa .env
-
-{
-
-  "url": "https://example.com"## 👥 Contributors
-
-}
-
-```IS207.Q13 - Seminar Project
-
-
-
-**Response:**## 📄 License
-
-
-
-```jsonISC
-
-{
-  "success": true,
-  "data": {
-    "url": "https://example.com",
-    "timestamp": "2025-10-29T10:30:00.000Z",
-    "score": 85,
-    "checks": {
-      "hasJsonLd": true,
-      "hasAuthor": true,
-      "hasMetaDescription": true,
-      "metaDescriptionLength": 155,
-      "h2Count": 5,
-      "hasOgTags": true,
-      "hasCanonical": true
-    },
-    "details": {
-      "jsonLd": {...},
-      "metaDescription": "...",
-      "headings": { "h1": 1, "h2": 5, "h3": 8 },
-      "ogTags": {...},
-      "canonical": "..."
-    }
-  }
-}
-```
-
-## 🔧 Development
-
-### Frontend Development
-
-```bash
-cd frontend
-npm run dev          # Start dev server
-npm run build        # Build for production
-npm run preview      # Preview production build
-```
-
-### Backend Development
-
-```bash
-cd backend
-npm run dev          # Start with nodemon (auto-restart)
-npm start            # Production mode
-```
-
-### Code Style
-
-- **Frontend:** Composition API, `<script setup>`, Tailwind utilities
-- **Backend:** Express middleware pattern, async/await
-- **Comments:** Ngắn gọn, rõ ràng, 1-2 dòng
-
-## 🐛 Troubleshooting
-
-### Port đã được sử dụng
-
-**Dừng tiến trình Node.js:**
-
-```powershell
-Get-Process -Name node | Stop-Process -Force
-```
-
-**Kiểm tra port cụ thể:**
-
-```powershell
-# Backend (port 3000)
-Get-NetTCPConnection -LocalPort 3000 | Select-Object OwningProcess
-
-# Frontend (port 5173)
-Get-NetTCPConnection -LocalPort 5173 | Select-Object OwningProcess
-```
-
-### Backend không kết nối
-
-1. Kiểm tra backend đang chạy: http://localhost:3000
-2. Kiểm tra CORS trong `backend/.env`:
-   ```
-   CORS_ORIGIN=http://localhost:5173
-   ```
-3. Kiểm tra frontend `.env`:
-   ```
-   VITE_API_BASE_URL=http://localhost:3000/api
-   ```
-
-### Puppeteer lỗi
-
-```bash
-cd backend
-Remove-Item -Recurse -Force node_modules
-npm install
-```
-
-### Dependencies lỗi
-
-```bash
-# Frontend
-cd frontend
-Remove-Item -Recurse -Force node_modules
-Remove-Item package-lock.json
-npm install
-
-# Backend
-cd ../backend
-Remove-Item -Recurse -Force node_modules
-Remove-Item package-lock.json
-npm install
-```
-
-## 🚀 Production Deployment
-
-### Frontend
-
-**Build:**
-
-```bash
-cd frontend
-npm run build
-```
-
-Output: `frontend/dist/`
-
-**Deploy to:**
-- Vercel
-- Netlify
-- GitHub Pages
-- Firebase Hosting
-
-**Update `.env.production`:**
-
-```properties
-VITE_API_BASE_URL=https://your-api-domain.com/api
-NODE_ENV=production
-```
+1. **Ngôn ngữ & Framework:**
+   - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) (ES6+)
+   - [Vue.js 3.5](https://vuejs.org/) - Progressive JavaScript Framework
+   - Composition API với `<script setup>`
+
+2. **Build Tool & Development:**
+   - [Vite 7.1](https://vitejs.dev/) - Next Generation Frontend Tooling
+   - HMR (Hot Module Replacement)
+
+3. **Styling:**
+   - [Tailwind CSS 4.1](https://tailwindcss.com/) - Utility-first CSS Framework
+   - Responsive Design
+   - Dark Mode Support
+
+4. **UI Components & Libraries:**
+   - [Reka UI 2.6](https://reka-ui.com/) - Headless UI Components
+   - [Axios 1.13](https://axios-http.com/) - HTTP Client
+
+5. **Deployment:**
+   - [Vercel](https://vercel.com/) - Static Site Hosting
+   - Auto-deployment từ GitHub
+   - Custom Domain Support
 
 ### Backend
 
-**Environment:**
+1. **Runtime & Language:**
+   - [Node.js 22.x](https://nodejs.org/) - JavaScript Runtime
+   - JavaScript (CommonJS)
 
-```properties
-PORT=3000
-NODE_ENV=production
-PUPPETEER_HEADLESS=true
-CORS_ORIGIN=https://your-frontend-domain.com
+2. **Framework:**
+   - [Express.js 5.1](https://expressjs.com/) - Web Application Framework
+   - RESTful API Architecture
+
+3. **Web Scraping & Parsing:**
+   - [Puppeteer 24.26](https://pptr.dev/) - Headless Browser Automation
+   - Crawl JavaScript-rendered content
+   - Screenshot capability
+   - [Cheerio 1.1](https://cheerio.js.org/) - Fast, flexible HTML parser
+
+4. **Utilities:**
+   - [CORS 2.8](https://www.npmjs.com/package/cors) - Cross-Origin Resource Sharing
+   - [dotenv 17.2](https://www.npmjs.com/package/dotenv) - Environment Variables
+   - [nodemon 3.1](https://nodemon.io/) - Auto-restart Development Server
+
+5. **Deployment:**
+   - [Render](https://render.com/) - Cloud Platform
+   - Docker Container
+   - Auto-deployment từ GitHub
+   - Custom Domain Support
+
+### DevOps & Tools
+
+1. **Version Control:**
+   - [Git](https://git-scm.com/)
+   - [GitHub](https://github.com/) - Repository Hosting
+
+2. **Containerization (Optional):**
+   - [Docker](https://www.docker.com/)
+   - Docker Compose
+
+3. **CI/CD:**
+   - Auto-deployment qua Vercel (Frontend)
+   - Auto-deployment qua Render (Backend)
+   - GitHub Webhooks
+
+### Performance & Optimization
+
+- **Frontend:**
+  - Code Splitting
+  - Lazy Loading
+  - Tree Shaking (Vite)
+  - Asset Optimization
+
+- **Backend:**
+  - Request validation
+  - Error handling
+  - Timeout configuration
+  - Resource cleanup (Puppeteer)
+
+---
+
+## CẤU TRÚC DỰ ÁN
+
+```
+IS207.Q13-seminar/
+├── backend/                          # Express Backend API
+│   ├── src/
+│   │   ├── index.js                 # Server entry point
+│   │   ├── routes/
+│   │   │   └── analyze.js           # API routes
+│   │   ├── controllers/
+│   │   │   └── analyzeController.js # Request handlers
+│   │   ├── services/
+│   │   │   ├── crawlerService.js    # Puppeteer crawler
+│   │   │   └── analyzerService.js   # SEO analysis logic
+│   │   └── utils/
+│   │       ├── parser.js            # HTML parsing utilities
+│   │       ├── scoring.js           # Score calculation
+│   │       └── validator.js         # Input validation
+│   ├── .env.example                 # Environment template
+│   ├── .dockerignore                # Docker ignore rules
+│   ├── Dockerfile                   # Docker configuration
+│   ├── package.json                 # Dependencies & scripts
+│   └── README.md                    # Backend documentation
+│
+├── frontend/                         # Vue 3 Frontend
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── features/            # Feature components
+│   │   │   │   ├── AnalyzerForm.vue      # URL input form
+│   │   │   │   └── ResultChecklist.vue   # Results display
+│   │   │   ├── layout/              # Layout components
+│   │   │   │   ├── AppNavbar.vue         # Navigation bar
+│   │   │   │   ├── AppHero.vue           # Hero section
+│   │   │   │   └── AppFooter.vue         # Footer
+│   │   │   └── ui/                  # UI primitives
+│   │   │       ├── BaseSpinner.vue       # Loading spinner
+│   │   │       ├── BaseAlert.vue         # Alert messages
+│   │   │       └── ScoreCircle.vue       # Score display
+│   │   ├── services/
+│   │   │   └── analyzerService.js   # API client
+│   │   ├── App.vue                  # Root component
+│   │   └── main.js                  # Entry point
+│   ├── public/                      # Static assets
+│   │   └── favicon.ico
+│   ├── index.html                   # HTML template
+│   ├── vite.config.js              # Vite configuration
+│   ├── tailwind.config.js          # Tailwind configuration
+│   ├── vercel.json                 # Vercel deployment config
+│   ├── package.json                # Dependencies & scripts
+│   └── README.md                   # Frontend documentation
+│
+├── render.yaml                      # Render Blueprint config
+├── DEPLOYMENT.md                    # Deployment guide
+├── .gitignore                       # Git ignore rules
+└── README.md                        # This file
 ```
 
-**Deploy to:**
-- Railway
-- Render
-- Heroku (với Puppeteer buildpack)
-- DigitalOcean
+---
 
-**Start:**
+## KIẾN TRÚC HỆ THỐNG
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                      PRODUCTION ARCHITECTURE                 │
+└─────────────────────────────────────────────────────────────┘
+
+                    ┌──────────────────┐
+                    │      User        │
+                    │    (Browser)     │
+                    └────────┬─────────┘
+                             │
+                             │ HTTPS
+                             ▼
+              ┌──────────────────────────────┐
+              │    Vercel CDN + Edge         │
+              │  (seo.helios.id.vn)          │
+              │                              │
+              │  ┌────────────────────────┐  │
+              │  │   Vue 3 Frontend       │  │
+              │  │   - Vite Build         │  │
+              │  │   - Tailwind CSS       │  │
+              │  │   - Static Assets      │  │
+              │  └────────────────────────┘  │
+              └──────────────┬───────────────┘
+                             │
+                             │ HTTPS POST
+                             │ /api/analyze
+                             ▼
+              ┌──────────────────────────────┐
+              │    Render Cloud Platform     │
+              │  (api.helios.id.vn)          │
+              │                              │
+              │  ┌────────────────────────┐  │
+              │  │   Express Backend      │  │
+              │  │   - REST API           │  │
+              │  │   - CORS Config        │  │
+              │  │   - Error Handler      │  │
+              │  └──────────┬─────────────┘  │
+              │             │                 │
+              │             ▼                 │
+              │  ┌────────────────────────┐  │
+              │  │   Puppeteer Service    │  │
+              │  │   - Headless Chrome    │  │
+              │  │   - Page Navigation    │  │
+              │  │   - JavaScript Render  │  │
+              │  └──────────┬─────────────┘  │
+              │             │                 │
+              │             ▼                 │
+              │  ┌────────────────────────┐  │
+              │  │   Cheerio Parser       │  │
+              │  │   - HTML Extraction    │  │
+              │  │   - SEO Data Parse     │  │
+              │  │   - Score Calculation  │  │
+              │  └────────────────────────┘  │
+              └──────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│                    DATA FLOW DIAGRAM                         │
+└─────────────────────────────────────────────────────────────┘
+
+User Input (URL)
+      │
+      ├──► Frontend Validation
+      │
+      ├──► POST /api/analyze
+      │
+      └──► Backend Receives Request
+              │
+              ├──► URL Validation
+              │
+              ├──► Puppeteer Launch Browser
+              │      │
+              │      ├──► Navigate to URL
+              │      ├──► Wait for Page Load
+              │      └──► Get HTML Content
+              │
+              ├──► Cheerio Parse HTML
+              │      │
+              │      ├──► Extract JSON-LD
+              │      ├──► Get Meta Tags
+              │      ├──► Count Headings
+              │      ├──► Get OG Tags
+              │      └──► Get Canonical URL
+              │
+              ├──► Calculate SEO Score
+              │
+              └──► Return JSON Response
+                     │
+                     └──► Frontend Display Results
+```
+
+---
+
+## CÀI ĐẶT PHẦN MỀM
+
+### Yêu cầu hệ thống
+- [X] [Node.js](https://nodejs.org/) >= 22.x
+- [X] [npm](https://www.npmjs.com/) >= 9.x
+- [X] [Git](https://git-scm.com/)
+- [X] ~200MB disk space (cho Chromium của Puppeteer)
+
+### Tùy chọn (cho development)
+- [ ] [Docker Desktop](https://www.docker.com/) - Containerization
+- [ ] [VS Code](https://code.visualstudio.com/) - Code editor
+- [ ] [Postman](https://www.postman.com/) - API testing
+
+### Hướng dẫn cài đặt Node.js
+
+1. **Tải Node.js**
+   - Truy cập [https://nodejs.org/](https://nodejs.org/)
+   - Tải phiên bản **LTS 22.x**
+
+2. **Cài đặt**
+   - Chạy file installer
+   - Chọn "Add to PATH" trong quá trình cài đặt
+   - Hoàn tất cài đặt
+
+3. **Kiểm tra cài đặt**
+   ```cmd
+   node -v
+   npm -v
+   ```
+
+---
+
+## KHỞI CHẠY DỰ ÁN
+
+### Yêu Cầu Trước Khi Chạy
+- Node.js >= 22.x đã được cài đặt
+- npm >= 9.x
+- Git đã được cài đặt
+
+### Bước 1: Clone Repository
+
+```bash
+git clone https://github.com/helios-ryuu/IS207.Q13-seminar.git
+cd IS207.Q13-seminar
+```
+
+### Bước 2: Setup Backend
 
 ```bash
 cd backend
-npm install --production
-npm start
+npm install
+
+# Tạo file .env từ template
+cp .env.example .env
 ```
 
-## 📊 Performance Notes
+**Cấu hình `backend/.env`:**
+```env
+PORT=3000
+NODE_ENV=development
+CORS_ORIGIN=http://localhost:5173
+PUPPETEER_TIMEOUT=60000
+PUPPETEER_HEADLESS=true
+```
 
-- **Mỗi request:** 10-30 giây (do Puppeteer fetch + render)
-- **Timeout:** 60 giây
-- **Concurrent requests:** Không giới hạn (có thể thêm rate limiting)
-- **Memory:** ~200MB mỗi Puppeteer instance
+**Chạy backend:**
+```bash
+npm run dev
+```
 
-## 🔒 Security
+✅ Backend sẽ chạy tại: **http://localhost:3000**
 
-- ✅ CORS configured
-- ✅ URL validation
-- ✅ Error handling
-- ⚠️ Chưa có: Rate limiting, Authentication
-- ⚠️ Chưa có: Request throttling
+### Bước 3: Setup Frontend
 
-**Production cần thêm:**
-- Helmet.js cho security headers
-- Rate limiting (express-rate-limit)
-- Input sanitization
-- Logging (winston, morgan)
+Mở terminal mới:
 
-## 📄 License
+```bash
+cd frontend
+npm install
 
-ISC License - Dự án học tập IS207.Q13
+# Tạo file .env từ template
+cp .env.example .env
+```
 
-## 👥 Contributors
+**Cấu hình `frontend/.env`:**
+```env
+VITE_API_BASE_URL=http://localhost:3000/api
+NODE_ENV=development
+```
 
-Nhóm sinh viên UIT - IS207.Q13
+**Chạy frontend:**
+```bash
+npm run dev
+```
 
-## 📚 Documentation
+✅ Frontend sẽ chạy tại: **http://localhost:5173**
 
-- **Root README:** Tổng quan và hướng dẫn setup
-- **frontend/README.md:** Chi tiết frontend (components, styling, deployment)
-- **backend/README.md:** Chi tiết backend (API, services, deployment)
+### Bước 4: Truy Cập Ứng Dụng
 
-## 🎯 Roadmap
+Mở trình duyệt và truy cập: **http://localhost:5173**
 
-### Hoàn thiện
-- ✅ Frontend với Vue 3 + Tailwind CSS
-- ✅ Backend với Express + Puppeteer
-- ✅ API integration
-- ✅ SEO scoring algorithm
-- ✅ Error handling
-- ✅ Documentation
+### Lưu ý quan trọng
+> ⚠️ **Backend phải chạy trước Frontend** để API có thể kết nối
+> 
+> 💡 **Lần chạy đầu tiên:** Puppeteer sẽ tự động tải Chromium (~170MB), quá trình này có thể mất vài phút
 
-### Tiếp theo (optional)
-- ⬜ Rate limiting
-- ⬜ Caching (Redis)
-- ⬜ Database lưu lịch sử phân tích
-- ⬜ User authentication
-- ⬜ Export results (PDF, CSV)
-- ⬜ Batch analysis (multiple URLs)
-- ⬜ Scheduled analysis
-- ⬜ Email notifications
+---
 
-## 🆘 Support
+## DEPLOYMENT
 
-Nếu gặp vấn đề:
+Xem hướng dẫn chi tiết trong **[DEPLOYMENT.md](./DEPLOYMENT.md)**
 
-1. Kiểm tra logs trong terminal
-2. Đọc **Troubleshooting** section
-3. Kiểm tra `.env` configuration
-4. Xóa `node_modules` và cài lại
-5. Kiểm tra Node.js version
+### Quick Summary
 
-## 🙏 Acknowledgments
+**Backend (Render):**
+- Platform: Render
+- Runtime: Docker
+- URL: https://api.helios.id.vn
+- Auto-deploy từ GitHub main branch
 
-- **Vue.js Team** - Amazing framework
-- **Puppeteer Team** - Browser automation
-- **Tailwind CSS** - Utility-first CSS
-- **Express.js** - Minimalist web framework
+**Frontend (Vercel):**
+- Platform: Vercel
+- Framework: Vite
+- URL: https://seo.helios.id.vn
+- Auto-deploy từ GitHub main branch
+
+**Custom Domains:**
+- Frontend CNAME: `seo → cname.vercel-dns.com`
+- Backend CNAME: `api → seo-analyzer-api.onrender.com`
+
+---
+
+## SECURITY
+
+**✅ Đã implement:**
+- CORS configuration
+- URL validation
+- Error handling
+- HTTPS (production)
+- Security headers (Vercel)
+
+**⚠️ Chưa có (TODO):**
+- Rate limiting
+- Authentication
+- Request throttling
+- Logging system

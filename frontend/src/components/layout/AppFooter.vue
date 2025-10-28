@@ -11,14 +11,35 @@
       <div class="flex flex-col md:flex-row items-center justify-between gap-4">
         <!-- Copyright -->
         <p class="text-sm text-gray-500">
-          © 2025 AIO Analyzer Tool. Built with Vue 3 & Tailwind CSS
+          © 2025 AIO Analyzer Tool. Built with Vue 3 & Tailwind CSS by 
+          <a 
+            href="https://github.com/helios-ryuu" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="text-primary hover:text-primary-hover transition-colors duration-200"
+          >
+            @helios-ryuu
+          </a>
         </p>
         
         <!-- Footer links -->
         <div class="flex items-center gap-4 text-sm text-gray-500">
-          <a href="#" class="hover:text-primary transition-colors duration-200">Privacy</a>
-          <a href="#" class="hover:text-primary transition-colors duration-200">Terms</a>
-          <a href="#" class="hover:text-primary transition-colors duration-200">Support</a>
+          <a 
+            href="https://github.com/helios-ryuu/IS207.Q13-seminar" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="hover:text-primary transition-colors duration-200"
+          >
+            GitHub
+          </a>
+          <a 
+            href="https://github.com/helios-ryuu/IS207.Q13-seminar/blob/main/README.md" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="hover:text-primary transition-colors duration-200"
+          >
+            Docs
+          </a>
         </div>
       </div>
     </div>
