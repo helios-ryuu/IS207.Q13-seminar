@@ -1,0 +1,23 @@
+services:
+  # Backend API Service
+  - type: web
+    name: seo-analyzer-api
+    runtime: docker
+    region: singapore
+    plan: starter
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "3000"
+      - key: PUPPETEER_HEADLESS
+        value: "true"
+      - key: PUPPETEER_TIMEOUT
+        value: "30000"
+      - key: CORS_ORIGIN
+        value: https://seo.helios.id.vn
+    healthCheckPath: /
+    domains:
+      - api.helios.id.vn

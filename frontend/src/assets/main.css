@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+/* ==================== RESET & CƠ BẢN ==================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #0A0E1A 0%, #1a1f35 50%, #0A0E1A 100%);
+  background-attachment: fixed;
+  color: #E5E7EB;
+  min-height: 100vh;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* ==================== HIỆU ỨNG GLASS & GLOW ==================== */
+
+/* Hiệu ứng kính mờ */
+.glass-effect {
+  background: rgba(19, 24, 39, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(31, 41, 55, 0.5);
+}
+
+/* Viền phát sáng */
+.glow-border {
+  border: 1px solid rgba(0, 198, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.2);
+}
+
+.glow-border:focus {
+  border-color: rgba(0, 198, 255, 0.6);
+  outline: none;
+  box-shadow: 0 0 20px rgba(0, 198, 255, 0.4);
+}
+
+/* Chữ phát sáng */
+.text-glow {
+  text-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+}
+
+/* ==================== NÚT BẤM ==================== */
+
+/* Nút chính */
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  background-color: #00C6FF;
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 300ms ease-out;
+  box-shadow: 0 0 20px rgba(0, 198, 255, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0099CC;
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(0, 198, 255, 0.5), 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ==================== CARD & ITEM ==================== */
+
+/* Card kết quả */
+.result-card {
+  background: rgba(19, 24, 39, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(31, 41, 55, 0.5);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  animation: slide-up 0.5s ease-out;
+}
+
+/* Mục trong danh sách kiểm tra */
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 300ms;
+  opacity: 0;
+  animation: slide-up 0.5s ease-out forwards;
+}
+
+.checklist-item:hover {
+  background-color: rgba(31, 41, 55, 0.3);
+}
+
+/* ==================== ICON TRẠNG THÁI ==================== */
+
+.icon-success {
+  color: #4ade80;
+  filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.6));
+}
+
+.icon-error {
+  color: #f87171;
+  filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6));
+}
+
+.icon-warning {
+  color: #facc15;
+  filter: drop-shadow(0 0 8px rgba(234, 179, 8, 0.6));
+}
+
+/* ==================== INPUT ==================== */
+
+input::placeholder {
+  color: #6B7280;
+}
+
+input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ==================== ANIMATIONS ==================== */
+
+/* Hiệu ứng phát sáng nhấp nháy */
+@keyframes glow-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(0, 198, 255, 0.5), 0 0 40px rgba(0, 198, 255, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(0, 198, 255, 0.8), 0 0 60px rgba(0, 198, 255, 0.5);
+  }
+}
+
+/* Hiệu ứng trượt lên */
+@keyframes slide-up {
+  0% { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hiệu ứng mờ dần */
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Hiệu ứng xoay */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.animate-spin-slow {
+  animation: spin 1.5s linear infinite;
+}
