@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Backend API for AIO Analyzer Tool",
   "main": "src/index.js",
+  "engines": {
+    "node": ">=25.0.0"
+  },
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
