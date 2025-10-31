@@ -49,7 +49,7 @@
    NODE_ENV=production
    PORT=3000
    PUPPETEER_HEADLESS=true
-   PUPPETEER_TIMEOUT=30000
+   PUPPETEER_TIMEOUT=120000
    CORS_ORIGIN=https://seo.helios.id.vn
    ```
 
@@ -515,7 +515,7 @@ Dự án đã có:
    NODE_ENV=production
    PORT=3000
    PUPPETEER_HEADLESS=true
-   PUPPETEER_TIMEOUT=30000
+   PUPPETEER_TIMEOUT=120000
    CORS_ORIGIN=https://seo.helios.id.vn
    ```
 

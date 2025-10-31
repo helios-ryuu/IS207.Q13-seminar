@@ -60,7 +60,7 @@ File `.env` đã được tạo sẵn:
 PORT=3000
 NODE_ENV=development
 CORS_ORIGIN=http://localhost:5173
-PUPPETEER_TIMEOUT=30000
+PUPPETEER_TIMEOUT=120000
 PUPPETEER_HEADLESS=true
 ```
 
@@ -224,10 +224,10 @@ curl -X POST http://localhost:3000/api/analyze \
 const browser = await puppeteer.launch({ headless: true })
 const page = await browser.newPage()
 
-// Navigate with 30s timeout
+// Navigate with 120s timeout
 await page.goto(url, { 
   waitUntil: 'networkidle0',
-  timeout: 30000 
+  timeout: 120000 
 })
 
 // Extract HTML
@@ -308,7 +308,7 @@ CORS_ORIGIN=http://localhost:5173
 Tăng timeout trong `.env`:
 
 ```properties
-PUPPETEER_TIMEOUT=60000
+PUPPETEER_TIMEOUT=120000
 ```
 
 ## 🚀 Production Deployment

@@ -5,7 +5,7 @@ import axios from 'axios';
 // Axios instance với cấu hình mặc định
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api',
-  timeout: 60000, // Tăng timeout vì Puppeteer cần thời gian
+  timeout: 120000, // Tăng timeout vì Puppeteer cần thời gian
   headers: { 'Content-Type': 'application/json' },
 });
 

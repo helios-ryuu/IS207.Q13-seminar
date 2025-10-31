@@ -64,7 +64,7 @@ exports.fetchPageContent = async (url) => {
     // Navigate to URL với timeout dài hơn và waitUntil domcontentloaded
     await page.goto(url, {
       waitUntil: 'domcontentloaded',
-      timeout: parseInt(process.env.PUPPETEER_TIMEOUT) || 60000
+      timeout: parseInt(process.env.PUPPETEER_TIMEOUT) || 120000
     });
 
     // Đợi JavaScript render (giảm thời gian chờ)

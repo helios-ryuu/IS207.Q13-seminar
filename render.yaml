@@ -15,7 +15,7 @@ services:
       - key: PUPPETEER_HEADLESS
         value: "true"
       - key: PUPPETEER_TIMEOUT
-        value: "60000"
+        value: "120000"
       - key: CORS_ORIGIN
         value: https://seo.helios.id.vn
     healthCheckPath: /
